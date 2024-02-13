@@ -60,11 +60,11 @@ class Utente {
 
     def beforeInsert() {
         if (systemNumber == null) {
-            def appointment = appointments.getAt(0)
-            def month = Utilities.extractMonthInDate(appointment.appointmentDate)
+              //  def appointment = appointments.getAt(0)
+            def month = Utilities.extractMonthInDate(registerDate)
             if (month < 10) month  = '0'+String.valueOf(month)
            // def month = Utilities.extractMonthInDate(appointment.appointmentDate)
-            def year = String.valueOf(Utilities.extractYearInDate(appointment.appointmentDate))
+            def year = String.valueOf(Utilities.extractYearInDate(registerDate))
             systemNumber = year+month+"-"+firstNames.substring(0,1)+lastNames.substring(0,1)+"-"+cellNumber
            println(systemNumber)
         }

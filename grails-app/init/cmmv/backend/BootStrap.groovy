@@ -31,6 +31,8 @@ class BootStrap {
     MobilizerLoginService mobilizerLoginService
 
     def init = { servletContext ->
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
+
         addInitialUsers()
         addFrontlineSmsDetails()
      //   def frontLineSmsDetail = frontlineSmsDetailsService.list().get(0)

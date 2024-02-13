@@ -115,4 +115,7 @@ class ClinicController extends RestfulController{
            render JSONSerializer.setObjectListJsonResponse(nearbyClinics) as JSON
         }
 
+    def searchAllActiveClinics(){
+            render JSONSerializer.setObjectListJsonResponse(Clinic.findAllByActive(true)) as JSON
+    }
 }
